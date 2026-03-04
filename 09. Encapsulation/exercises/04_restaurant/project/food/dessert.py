@@ -1,8 +1,7 @@
 from project.food.food import Food
 
 class Dessert(Food):
-    GRAMS = 22
-    def __init__(self, name, price, calories: float, grams = GRAMS):
+    def __init__(self, name: str, price: float, grams: float, calories: float):
         super().__init__(name, price, grams)
         self.__calories = calories
 
@@ -10,6 +9,6 @@ class Dessert(Food):
     def calories(self):
         return self.__calories
 
-    @calories.setter
-    def calories(self, value):
-        self.__calories = value
+    # @calories.setter
+    # def calories(self, value):
+    #     self.__calories = value
