@@ -49,9 +49,9 @@ class Computer(ABC):
 
     def configure_computer(self, processor: str, ram: int):
         if processor not in self.valid_processor:
-            raise ValueError(f"{self.processor} is not compatible with {self.__str__()} {self.__manufacturer} {self.__model}!")
+            raise ValueError(f"{processor} is not compatible with {self.__str__()} {self.__manufacturer} {self.__model}!")
         if ram not in self.valid_ram:
-            raise ValueError(f"{self.ram}GB RAM is not compatible with {self.__str__()} {self.__manufacturer} {self.__model}!")
+            raise ValueError(f"{ram}GB RAM is not compatible with {self.__str__()} {self.__manufacturer} {self.__model}!")
 
         self.processor = processor
         self.ram = ram
