@@ -71,22 +71,13 @@ class Car:
 
         self.__fuel_amount -= needed
 
-car = Car("a", "b", 1, 4)
-car.make = ""
-print(car)
+# car = Car("a", "b", 1, 4)
+# car.make = ""
+# print(car)
 
 from unittest import TestCase, main
 
 class CarTests(TestCase):
-    def test_make_empty_raises(self):
-        with self.assertRaises(Exception) as ex:
-            Car(None, "test model", 20, 100)
-        self.assertEqual("Make cannot be null or empty!", str(ex.exception))
-
-        with self.assertRaises(Exception) as ex:
-            Car("", "test model", 20, 100)
-        self.assertEqual("Make cannot be null or empty!", str(ex.exception))
-
     def test_init(self):
         c = Car("test make", "test model", 20, 100)
         self.assertEqual(c.make, "test make")
@@ -97,6 +88,15 @@ class CarTests(TestCase):
 
         c.fuel_amount = 20
         self.assertEqual(c.fuel_amount, 20)
+
+    def test_make_empty_raises(self):
+        with self.assertRaises(Exception) as ex:
+            Car(None, "test model", 20, 100)
+        self.assertEqual("Make cannot be null or empty!", str(ex.exception))
+
+        with self.assertRaises(Exception) as ex:
+            Car("", "test model", 20, 100)
+        self.assertEqual("Make cannot be null or empty!", str(ex.exception))
 
     def test_model_empty_raises(self):
         with self.assertRaises(Exception) as ex:

@@ -45,12 +45,11 @@ from unittest import TestCase, main
 
 class ListTest(TestCase):
     def setUp(self):
-        self.integer_list = IntegerList([100, 1, 20])
+        self.integer_list = IntegerList(100, 1, 20)
 
     def test_init(self):
         l = IntegerList(1, "2", 10.7, 6)
         self.assertEqual(l.get_data(), [1, 6])
-        self.assertEqual(l.__IntegerList__data, [1, 6])
 
     def test_add_not_int_raises(self):
         self.assertEqual(self.integer_list.get_data(), [100, 1, 20])

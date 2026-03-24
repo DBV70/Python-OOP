@@ -62,7 +62,7 @@ class WorkerTest(TestCase):
 
     def test_get_info(self):
         w = Worker('John', 1000, 100)
-        expected_result = 'test has saved 0 money.'
+        expected_result = 'John has saved 0 money.'
         result = w.get_info()
         self.assertEqual(expected_result, result)
 
